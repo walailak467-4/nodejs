@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alot JOBs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet"
+        href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="design_files/css/style.css">
+    <link rel="stylesheet" href="design_files/css/more_information.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+</head>
+
+<body style="font-family: 'Prompt';">
+    <div class="wrapper" style="background-image: url('design_files/images/accountSettingsback.jpg');">
+        <div id="work" class="inner">
+            <form action="" style="width: 100%;">
+                <h3 style="font-family: 'Prompt';font-weight: bold;">ข้อมูลเพิ่มเติ่ม</h3>
+                <div class="form-wrapper">
+                    <label style="font-size:16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;คุณสามารถแนะนำตัวเพิ่มเติม แสดงรายละเอียดของงานที่ต้องการ หรือข้อจำกัดในการทำงาน
+                        เพื่อเป็นประโยชน์แก่การหางานให้เหมาะสมกับคุณมากที่สุด ...</label>
+                    <textarea type="text" id="moreINFO" name="moreINFO"
+                        placeholder="กรอกข้อมูลเพิ่มเติม ..."></textarea>
+                </div>
+
+                <div class="form-group container-login100-form-btn">
+                    <button id="btn-more" type="button">
+                        Submit
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="js/index.js"></script> -->
+    <!-- <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userID = firebase.auth().currentUser.uid;
+                firebase.database().ref('Users/' + userID).once('value').then(function (snapshot) {
+                    if (snapshot.val()) {
+                        window.location.href = "MainPage.html"
+                    }
+                });
+
+            }
+        });
+    </script> -->
+</body>
+
+</html>

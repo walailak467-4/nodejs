@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alot JOBs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet"
+        href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="design_files/css/style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+</head>
+
+<body style="font-family: 'Prompt';">
+    <div class="wrapper" style="background-image: url('design_files/images/accountSettingsback.jpg');">
+        <div id="work" class="inner">
+            <form action="" style="width: 100%;">
+                <h3 style="font-family: 'Prompt';font-weight: bold;">ประวัติส่วนตัว</h3>
+                <div class="form-wrapper">
+                    <img id="blah" src="http://placehold.it/100" alt="your image"
+                        style="width:26%;border-radius: 50%; margin-bottom:10px; margin-left: 37%; margin-right: 37%;" />
+                </div>
+                <div class="form-group">
+                    <input type="file" id="imgPro" class="form-control" name="upload" onchange="readURL(this);" style="display: none;"/>
+                    <input type="text" class="form-control" name="uploadtext" placeholder="รูปโปรไฟล์" onkeydown="upload.value=uploadtext.value"
+                        style="width: 80%;" />
+                    <input type="button" class="form-control" name="uploadbutton" value="เลือกไฟล์"
+                        onclick="upload.click()" onmouseout="uploadtext.value=upload.value"
+                        style="border:solid;width: 20%;margin-left: 10px;background-color: gray;color: white;" />
+                </div>
+                <div class="form-group">
+                    <input id="firstname" type="text" placeholder="ชื่อ" class="form-control">
+                    <input id="lastname" type="text" placeholder="นามสกุล" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input id="nickname" type="text" placeholder="ชื่อเล่น" class="form-control">
+                    <input id="birthdate" type="date" placeholder="วันเกิด" class="form-control">
+                </div>
+                <div class="form-wrapper">
+                    <select name="" id="gender" class="form-control">
+                        <option value="" disabled selected>เพศ</option>
+                        <option value="ชาย">ชาย</option>
+                        <option value="หญิง">หญิง</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
+                    </select>
+                    <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input id="phone" type="number" placeholder="เบอร์โทรศัพท์" class="form-control">
+                    <i class="zmdi zmdi-tablet-mac"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input id="email" type="email" placeholder="อีเมล" class="form-control">
+                    <i class="zmdi zmdi-email"></i>
+                </div>
+
+                <div class="form-group container-login100-form-btn">
+                    <button id="btn-proJOB" type="button">
+                        Submit
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userID = firebase.auth().currentUser.uid;
+                firebase.database().ref('Users/' + userID).once('value').then(function (snapshot) {
+                    if (snapshot.val()) {
+                        window.location.href = "MainPage.html"
+                    }
+                });
+
+            }
+        });
+    </script>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

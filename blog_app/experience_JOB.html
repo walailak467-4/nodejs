@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alot JOBs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet"
+        href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="design_files/css/style.css">
+    <link rel="stylesheet" href="design_files/css/experience_JOB.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
+
+</head>
+
+<body style="font-family: 'Prompt';">
+    <div class="wrapper" style="background-image: url('design_files/images/accountSettingsback.jpg');">
+        <div id="work" class="inner">
+            <form action="" style="width: 100%;">
+                <h3 style="font-family: 'Prompt';font-weight: bold;">ประสบการณ์ด้านการทำงาน</h3>
+                <div class="form-wrapper">
+                    <div class="chkEx" id="chkEx">
+                        <input type="radio" id="chkEx1" name="chkEx" value="มี"><span class="span">
+                            มีประสบการณ์ด้านการทำงาน</span><br>
+                        <input type="radio" id="chkEx2" name="chkEx" value="ไม่มี"><span class="span">
+                            ไม่มีประสบการณ์ด้านการทำงาน</span><br>
+                        <p class="p">(หากคุณไม่มีประสบการณ์ด้านการทำงาน ให้กดเครื่องหมายถูกและกดขั้นตอนถัดไป)</p>
+                    </div>
+                </div>
+                <div class="form-wrapper" id="exper">
+                    <div>
+                        <label for="positionJOB">ตำแหน่งงาน</label><br>
+                        <input type="text" id="positionJOB" name="positionJOB" placeholder="ตำแหน่งงาน">
+                    </div>
+                    <div>
+                        <label for="workplace">บริษัท / ร้านค้า</label><br>
+                        <input type="text" id="workplace" name="workplace" placeholder="สถานที่ทำงาน">
+                    </div>
+                    <div>
+                        <label for="detailJOB">รายละเอียดของงานที่ทำ</label><br>
+                        <textarea type="text" id="detailJOB" name="detailJOB"
+                            placeholder="รายละเอียดหน้าที่ที่ได้รับผิดชอบ"></textarea>
+                    </div>
+                    <div id="lengthTimeJOB">
+                        <label for="lengthTimeJOB">ระยะเวลาในการทำงาน</label>
+                        <input type="number" id="lengthYear" min="1" max="100" placeholder="...ปี">
+                        <label>ปี</label>
+                        <input type="number" id="lengthMonth" min="1" max="100" placeholder="...เดือน">
+                        <label>เดือน</label>
+                        <input type="number" id="lengthDay" min="1" max="100" placeholder="...วัน">
+                        <label>วัน</label>
+                    </div>
+                    <div class="butt">
+                        <input class="addEx" type='submit' value="เพิ่มประสบการณ์ในการทำงาน">
+                    </div>
+                </div>
+
+                <div class="form-group container-login100-form-btn">
+                    <button id="btn-exper" type="button">
+                        Submit
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- <script src="js/index.js"></script> -->
+    <!-- <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userID = firebase.auth().currentUser.uid;
+                firebase.database().ref('Users/' + userID).once('value').then(function (snapshot) {
+                    if (snapshot.val()) {
+                        window.location.href = "MainPage.html"
+                    }
+                });
+
+            }
+        });
+    </script> -->
+    <script>
+        $("#exper").hide();
+        $("#chkEx1").click(function () {
+            $("#exper").show();
+        });
+        $("#chkEx2").click(function () {
+            $("#exper").hide();
+        });
+    </script>
+</body>
+
+</html>

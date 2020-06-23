@@ -1,0 +1,74 @@
+input {
+    font-family: 'Prompt';
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+
+}
+
+::placeholder {
+    font-family: 'Prompt';
+}
+
+label {
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+    font-weight: bold;
+    font-size:16px;
+}
+
+.butt {
+    /* padding: 5px; */
+    /* border: 1px solid rgb(216, 213, 213); */
+    font-family: 'Prompt';
+    font-weight: bold;
+    border-radius: 4px;
+    /* background-color: rgb(216, 213, 213); */
+    /* color: rgb(66, 65, 65); */
+    margin-left: 35%;
+    margin-right: 35%;
+    width: 30%;
+}
+.addEducation{
+    padding: 5px;
+    border: 1px solid rgb(216, 213, 213);
+    font-family: 'Prompt';
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: rgb(216, 213, 213);
+    color: rgb(66, 65, 65);
+}
+
+.butt :hover {
+    background-color: #f2f2f2;
+    color: black;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+select:required:invalid {
+    color: gray;
+    font-family: 'Prompt';
+    
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+    font-family: 'Prompt';
+}
+.p {
+    color: gray;
+    font-size: 12px;
+    margin-top: -5px;
+    margin-left: 30px;
+}
